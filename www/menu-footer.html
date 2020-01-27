@@ -1,0 +1,46 @@
+<a href="#" class="footer-title">
+    <!-- Replace footer-title with footer-logo to activate logo image found in style.css-->
+    <h4 class="color-theme">Bienestar Universitario</h4>
+    <p>Built with <i class="fa fa-heart color-red2-dark"></i> by Enabled</p>
+</a>
+
+
+
+<div data-menu-load="menu.html" class="footer-menu">
+    <div class="one-half">
+        <a href="#"><i class="fa fa-graduation-cap color-yellow1-dark"></i><span>Beneficios</span></a>
+        <a href="#"><i class="fas fa-address-card color-teal-dark"></i><span>Agendar Cita</span></a>
+        <a href="#"><i class="fas fa-comments color-blue2-dark"></i><span>Chats Online</span></a>
+    </div>
+    
+    <div class="clear"></div>
+</div>
+
+
+
+
+<div class="clear"></div>
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function(){      
+        //Copyright Year 
+        var copyrightYear = $('.copyright-year ,#copyright-year');
+        var dteNow = new Date(); var intYear = dteNow.getFullYear();
+        copyrightYear.html(intYear);
+
+        //Back to Top
+        var backToTop = $('.back-to-top, [data-back-to-top], .back-to-top-badge, .back-to-top-icon'),
+            backToTopBadge = $('.back-to-top-badge, .back-to-top-icon');
+
+        backToTop.on( "click", function(e){
+            e.preventDefault();
+            $('html, body, .page-content').animate({
+                scrollTop: 0
+            }, 350);
+            return false;
+        });
+    });
+    
+</script>

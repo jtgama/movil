@@ -1,0 +1,73 @@
+<div data-height="150" class="caption bottom-70">
+    <div class="caption-overlay bg-gradient-fade"></div>
+    <div class="caption-background bg-18"></div>
+</div>
+<div class="fade-content center-text">
+    <h4>Bienestar Universitario</h4>
+    <p class="color-highlight font-9">Bienvenidos a Nuestro Portal</p>
+</div>
+
+<div class="sidebar-menu">
+    
+    <a id="menu-homepages" href="index-homepages.html"><i class="fa fa-home color-gray2-dark"></i><span>Inicio</span><i class="fa fa-angle-right"></i></a>
+    <a id="menu-components" href="index.html"><i class="fa fa-graduation-cap color-blue2-dark"></i><span>Beneficios</span><i class="fa fa-angle-right"></i></a>
+    <a id="menu-navigations" href="index-navigations.html"><i class="fas fa-address-card color-teal-dark"></i><span>Agendar Cita</span><i class="fa fa-angle-right"></i></a>
+    <a id="menu-media" href="index-media.html"><i class="fas fa-comments color-green1-dark"></i><span>Chats Online</span><i class="fa fa-angle-right"></i></a>
+    <a id="menu-pages" href="pageapp-register.html"><i class="fa fa-file color-teal-dark"></i><span>Registrarse</span><i class="fa fa-angle-right"></i></a>
+    <a id="menu-appstyled" href="login.html"><i class="fas prefix fa-user color-pink2-dark"></i><span>Inicia Sesion</span><i class="fa fa-angle-right"></i></a>
+    
+</div>
+
+
+
+
+
+
+<script>
+
+$(document).ready(function(){      
+    $('.caption').each(function(){
+        var notchSize = 0;
+        if($('body').hasClass('has-notch')){
+            var notchSize = $('.notch-hider').height();
+        }
+        var windowHeight = $(window).height();
+        var captionHeight = $(this).data('height');
+        if(captionHeight === "cover"){
+            $(this).css('height', windowHeight - notchSize - headerHeight)
+            $('.map-full').css('height', windowHeight - headerHeight );
+            if(!header.length){
+                pageContent.css('padding-bottom','0px');
+                $(this).find('.caption-center, .caption-bottom, .caption-top').css('margin-top','0px');
+            }     
+            if(header.length){
+                $(this).find('.caption-center, .caption-bottom, .caption-top').css('margin-top', header.height())
+            }
+        }         
+        if(captionHeight === "cover-header"){
+            $(this).css('height', windowHeight - headerHeight );
+            $('.map-full').css('height', windowHeight - headerHeight );
+            //$(this).css('height', windowHeight)
+            if(!header.length){
+                pageContent.css('padding-bottom','0px');
+                $(this).find('.caption-center, .caption-bottom, .caption-top').css('margin-top','0px');
+            }     
+            if(header.length){
+                //$(this).find('.caption-center, .caption-bottom, .caption-top').css('margin-top', header.height())
+            }
+
+        }
+       $(this).css('height',captionHeight)
+    });
+    
+    $('.close-menu').on('click', function(){
+        $('.menu').removeClass('menu-active');
+        $('.menu-hider').removeClass('menu-active menu-active-clear');
+        $('.header, .page-content').css('transform','translate(0,0)');
+        $('.menu-hider').css('transform','translate(0,0)');
+        return false;
+    });
+    
+});
+
+</script>
